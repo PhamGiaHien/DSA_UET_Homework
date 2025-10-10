@@ -44,6 +44,14 @@ public class Queue {
         System.out.println();
     }
 
+    void peek(){
+        if (checkEmpty()){
+            System.out.println("Queue Empty");
+            return;
+        }
+        System.out.println(queue[front]);
+    }
+
     public static void main(String[] args) {
         Queue obj = new Queue(10);
 
@@ -58,6 +66,8 @@ public class Queue {
         System.out.println(obj.checkFull());
 
         System.out.println(obj.Dequeue());
+        obj.printQueue();
+        obj.peek();
         obj.printQueue();
     }
 }

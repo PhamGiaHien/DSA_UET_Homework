@@ -1,17 +1,16 @@
-import java.util.Stack;
 import java.util.Scanner;
+import java.util.Stack;
 
-class Main {
+public class Balanced_Brackets {
     public static String isBalanced(String s) {
-        Stack <Character> st = new Stack<>();
+        Stack<Character> st = new Stack<>();
         int size = s.length();
 
         for (int i = 0; i < size; i++) {
             if (s.charAt(i) == '(' || s.charAt(i) == '{' || s.charAt(i) == '[') {
                 st.add(s.charAt(i));
-            }
-            else if (s.charAt(i) == ')' || s.charAt(i) == '}' || s.charAt(i) == ']'){
-                if (st.isEmpty()){
+            } else if (s.charAt(i) == ')' || s.charAt(i) == '}' || s.charAt(i) == ']') {
+                if (st.isEmpty()) {
                     return "NO";
                 }
 
@@ -21,7 +20,7 @@ class Main {
                 else if (top != '[' && s.charAt(i) == ']') return "NO";
             }
         }
-        if (!st.isEmpty()){
+        if (!st.isEmpty()) {
             return "NO";
         }
         return "YES";
@@ -31,7 +30,7 @@ class Main {
         Scanner input = new Scanner(System.in);
         int num = input.nextInt();
 
-        for (int i = 0; i < num; i++){
+        for (int i = 0; i < num; i++) {
             String S = input.next();
             System.out.println(isBalanced(S));
         }
