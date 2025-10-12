@@ -1,3 +1,5 @@
+package Stack_Queue;
+
 public class Queue {
     private int front, back, size, capacity;
     private int[] queue;

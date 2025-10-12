@@ -1,3 +1,5 @@
+package Stack_Queue;
+
 import edu.princeton.cs.algs4.*;
 
 public class Stack {
