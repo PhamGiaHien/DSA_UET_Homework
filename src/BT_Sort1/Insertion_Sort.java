@@ -22,6 +22,10 @@ public class Insertion_Sort {
             while (j >= 0 && a[j] > current){
                 a[j + 1] = a[j];
                 j--;
+                for (int k = 0; k < size; k++){
+                    System.out.print(a[k] + " ");
+                }
+                System.out.println();
             }
 
             a[j + 1] = current;
