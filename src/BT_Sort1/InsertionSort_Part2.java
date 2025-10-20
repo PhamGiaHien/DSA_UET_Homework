@@ -6,26 +6,21 @@ import java.util.LinkedList;
 import java.util.List;
 import java.util.Scanner;
 
-public class InsertionSort_Part1 {
-    public static void insertionSort1(int n, List<Integer> arr) {
+public class InsertionSort_Part2 {
+    public static void insertionSort2(int n, List<Integer> arr) {
         for (int i = 1; i < n; i++){
             int current = arr.get(i);
             int j = i - 1;
-
-            while (j >= 0 && arr.get(j) > current){
+            while (j >= 0 && arr.get(j) > current) {
                 arr.set(j + 1, arr.get(j));
                 j--;
-                for (int k = 0; k < n; k++){
-                    System.out.print(arr.get(k) + " ");
-                }
-                System.out.println();
+                arr.set(j + 1, current);
             }
-            arr.set(j + 1, current);
+            for (int k = 0; k < n; k ++){
+                System.out.print(arr.get(k) + " ");
+            }
+            System.out.println();
         }
-        for (int j : arr) {
-            System.out.print(j + " ");
-        }
-        System.out.println();
     }
 
     public static void main(String[] args) {
@@ -43,12 +38,11 @@ public class InsertionSort_Part1 {
         for (int k : a) {
             System.out.print(k + " ");
         }
-
         System.out.println();
         System.out.println("after Insertion");
 
         Stopwatch timer = new Stopwatch();
-        insertionSort1(n, a);
+        insertionSort2(n, a);
 
         for (int j : a) {
             System.out.print(j + " ");
