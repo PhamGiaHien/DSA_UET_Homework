@@ -24,22 +24,4 @@ public class QuickSort1_Partition {
         }
         return list;
     }
-
-    public static void main(String[] args) {
-        Scanner input = new Scanner(System.in);
-        int num = input.nextInt();
-        List<Integer> list = new LinkedList<>();
-
-        for (int i = 0; i < num; i++){
-            int x = input.nextInt();
-            list.add(x);
-        }
-
-        quickSort(list);
-
-        for (int i = 0; i < num; i++){
-            System.out.print(list.get(i) + " ");
-        }
-
-    }
 }

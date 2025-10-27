@@ -1,17 +1,26 @@
 package BT_Sort2;
 
-import java.util.Collections;
-import java.util.LinkedList;
-import java.util.List;
-import java.util.Scanner;
+import java.util.*;
 
-public class Find_the_Median {
+public class Find_the_Median{
     public static int findMedian(List<Integer> arr) {
-        // Write your code here
-        Collections.sort(arr);
-        int size = arr.size();
+        /*
+        Arrays.sort(arr);
+        return arr.size()/2;
+         */
+        PriorityQueue<Integer> minHeap = new PriorityQueue<>();
+        PriorityQueue<Integer> maxHeap = new PriorityQueue<>(Comparator.reverseOrder());
 
-        return arr.get(size/2);
+        int size = arr.size();
+        for (int i = 0; i < size; i++){
+            minHeap.add(arr.get(i));
+            maxHeap.add(minHeap.poll());
+
+            if (maxHeap.size() > minHeap.size()){
+                minHeap.add(maxHeap.poll());
+            }
+        }
+        return minHeap.peek();
     }
 
     public static void main(String[] args) {
