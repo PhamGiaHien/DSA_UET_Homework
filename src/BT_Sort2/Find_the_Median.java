@@ -4,10 +4,10 @@ import java.util.*;
 
 public class Find_the_Median{
     public static int findMedian(List<Integer> arr) {
-        /*
-        Arrays.sort(arr);
-        return arr.size()/2;
-         */
+
+        /*Collections.sort(arr);
+        return arr.get(arr.size() / 2);*/
+
         PriorityQueue<Integer> minHeap = new PriorityQueue<>();
         PriorityQueue<Integer> maxHeap = new PriorityQueue<>(Comparator.reverseOrder());
 
